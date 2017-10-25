@@ -3,8 +3,8 @@ package com.codeup.adlister.dao;
 public class Config {
 
     private String url="jdbc:mysql://localhost/adlister_db?serverTimezone=UTC";
-    private String user="adlister_user_admin";
-    private String password="adlister_pwd";
+    private String user="adlister_user";
+    private String password="codeup";
 
 
     public String getUrl(){
