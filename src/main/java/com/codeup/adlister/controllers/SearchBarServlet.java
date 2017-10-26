@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "SearchBarServlet", urlPatterns = "/search")
-class SearchBarServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+@WebServlet(name = "controllers.SearchBarServlet", urlPatterns = "/search")
+public class SearchBarServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String searchAd = request.getParameter("search");
         List<Ad> ads = DaoFactory.getAdsDao().search(searchAd);
         request.setAttribute("ads", ads);
