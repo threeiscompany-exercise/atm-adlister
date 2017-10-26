@@ -7,7 +7,7 @@
         <form action="/search" method="post" class="navbar-form navbar-left" role="search">
 
             <div class="form-group">
-                <input type="text" name="search" class="form-control" placeholder="Search">
+                <input type="text" name="search" class="form-control" placeholder="Search Ads">
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>

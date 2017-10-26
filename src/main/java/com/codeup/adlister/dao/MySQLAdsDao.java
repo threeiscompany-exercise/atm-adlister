@@ -81,11 +81,6 @@ public class MySQLAdsDao implements Ads {
             return null;
         }
     }
-//    @Override
-//    public List<Ad> search(String searchAd) {
-//        return ads;
-//
-//    }
 
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
