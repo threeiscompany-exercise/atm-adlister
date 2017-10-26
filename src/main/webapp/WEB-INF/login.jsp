@@ -7,6 +7,7 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
     <div class="container">
 
         <h1>Please Log In</h1>
@@ -20,7 +21,7 @@
                 <input id="password" name="password" class="form-control" type="password">
             </div>
             <%--<input type="submit" class="btn btn-primary btn-block" value="Log In">--%>
-            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <button  class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="material-icons right">send</i>
             </button>
         </form>
