@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.ViewProfileServlet", urlPatterns = "/profile")
-public class ViewProfileServlet extends HttpServlet {
+@WebServlet(name = "controllers.ViewProfileAdsServlet", urlPatterns = "/profileAds")
+public class ViewProfileAdsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = (User) request.getSession().getAttribute("user");
-//        if (user instanceof User) {
-//            response.sendRedirect("/login");
-//            return;
-//        }
+        if (user == null) {
+            response.sendRedirect("/login");
+            return;
+        }
         request.setAttribute("ads", DaoFactory.getAdsProfileDao().all(user.getId()));
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }

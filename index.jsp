@@ -1,6 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.io.*, java.util.*"%>
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
@@ -13,14 +12,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="style/css/login_stylesheet.css">
     <%--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--%>
+
     <%--<link rel="stylesheet" href="login_stylesheet.css">--%>
+    <style>
+        body {
+            background-image: url("Thunderdome.png");
+            background-color: cornflowerblue;
+        }
+
+        h1 {
+            color: maroon;
+            margin-left: 40px;
+        }
+    </style>
 </head>
+
 <body>
-<h1>Hello Govna</h1>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 <div class="container">
-    <span class="blue-text text-darken-2">Welcome to the Thunderdome!</span>
-    <button>test</button>
+    <h1>Welcome to the Thunderdome!</h1>
 </div>
 <%--<div class="container">--%>
     <%--<h1>Welcome to the Thunderdome!</h1>--%>
