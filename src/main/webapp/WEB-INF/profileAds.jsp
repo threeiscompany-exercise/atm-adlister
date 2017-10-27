@@ -8,7 +8,7 @@
     </jsp:include>
 </head>
 <body>
-<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+<jsp:include page="/WEB-INF/partials/profileNavBar.jsp"/>
 
 <div class="container">
     <h1>Welcome, ${sessionScope.user.username}!</h1>
@@ -20,6 +20,9 @@
         </div>
     </c:forEach>
 
+</div>
+<div>
+    <button type="submit" class="btn btn-default">Create Ads</button>
 </div>
 
 </body>
