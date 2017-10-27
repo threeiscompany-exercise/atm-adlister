@@ -10,10 +10,10 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container">
-    <h1><c:out value="${ad.title}"/> - Ad</h1>
+    <h1><c:out value="${ad.title}"></c:out><br><small><h4>created by: ${user.username}</h4></small></h1>
 
         <div class="col-md-6">
-            <h2>Description</h2>
+            <h3>Description</h3>
             <p><c:out value="${ad.description}" /></p>
         </div>
 </div>
