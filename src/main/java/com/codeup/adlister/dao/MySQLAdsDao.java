@@ -2,6 +2,7 @@ package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
 import com.mysql.cj.jdbc.Driver;
+import javafx.embed.swt.SWTFXUtils;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -37,6 +38,23 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
     }
+
+    @Override
+    public Ad viewSingleAd(Long id){
+        PreparedStatement statement = null;
+        try{
+            statement = connection.prepareStatement("SELECT * FROM ADS WHERE ID = ?");
+            statement.setLong(1, id);
+            ResultSet rs = statement.executeQuery();
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving single ad", e);
+        }
+
+    }
+
+
 
     @Override
     public Long insert(Ad ad) {
@@ -80,6 +98,11 @@ public class MySQLAdsDao implements Ads {
             e.printStackTrace();
             return null;
         }
+    }
+
+    @Override
+    public Ad findById(Long id) {
+        return null;
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException {

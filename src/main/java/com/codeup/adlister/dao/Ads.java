@@ -11,5 +11,7 @@ public interface Ads {
     Long insert(Ad ad);
 
     List<Ad> search(String searchAd);
-//    Ad viewOneAd(Long id);
+
+    Ad findById(Long id);
+    Ad viewSingleAd(Long id);
 }
