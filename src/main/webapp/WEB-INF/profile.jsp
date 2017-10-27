@@ -10,7 +10,9 @@
     <jsp:include page="/WEB-INF/partials/profileNavBar.jsp" />
 
     <div class="container">
-        <h1 id="profileH1">Welcome, ${sessionScope.user.username}!</h1>
+        <div class="page-header">
+            <%--<h1>Example page header <small>Subtext for header</small></h1>--%>
+        <h1 id="profileH1">Welcome, ${sessionScope.user.username.toUpperCase()}! <br> <small>${sessionScope.user.email}</small></h1>
         <p>View your ads here:</p>
         <c:forEach var="ad" items="${ads}">
             <div class="row-md-4">
@@ -19,10 +21,12 @@
                 <p>${ad.description}</p>
             </div>
         </c:forEach>
+        <br>
 
-    </div>
-    <div>
-        <a class="btn btn-default" href="/ads/create" role="button">Create an Ad</a>
+            <div>
+                <a class="btn btn-default" href="/ads/create" role="button">Create an Ad</a>
+            </div>
+        </div>
     </div>
 
 </body>
