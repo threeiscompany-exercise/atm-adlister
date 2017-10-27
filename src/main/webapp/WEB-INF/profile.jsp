@@ -14,7 +14,8 @@
         <p>View your ads here:</p>
         <c:forEach var="ad" items="${ads}">
             <div class="row-md-4">
-                <h3>${ad.title}</h3>
+                <h2><a href="/ads/viewAd?id=${ad.id}">${ad.title}</a></h2>
+
                 <p>${ad.description}</p>
             </div>
         </c:forEach>
