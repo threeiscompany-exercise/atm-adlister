@@ -16,8 +16,11 @@
         <h1 class="indexH1">Welcome to the Thunderdome!</h1>
     </div>
     <div>
-
+        <h2 class="indexH2">Two Ads Enter One Ad Leaves</h2>
     </div>
+<div class="photoIndex text-center">
+    <img src="style/img/businessmen.jpg" alt="men fighting" width="700px" height="600px">
+</div>
 
 </body>
 </html>
