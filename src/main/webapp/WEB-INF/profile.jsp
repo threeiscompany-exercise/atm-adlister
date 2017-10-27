@@ -10,15 +10,19 @@
     <jsp:include page="/WEB-INF/partials/profileNavBar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.username}!</h1>
+        <h1 id="profileH1">Welcome, ${sessionScope.user.username}!</h1>
         <p>View your ads here:</p>
         <c:forEach var="ad" items="${ads}">
             <div class="row-md-4">
                 <h2><a href="/ads/viewAd?id=${ad.id}">${ad.title}</a></h2>
+
                 <p>${ad.description}</p>
             </div>
         </c:forEach>
 
+    </div>
+    <div>
+        <a class="btn btn-default" href="/ads/create" role="button">Create an Ad</a>
     </div>
 
 </body>
