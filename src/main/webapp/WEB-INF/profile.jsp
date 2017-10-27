@@ -20,6 +20,9 @@
         </c:forEach>
 
     </div>
+    <div>
+        <a class="btn btn-default" href="/ads/create" role="button">Create an Ad</a>
+    </div>
 
 </body>
 </html>
