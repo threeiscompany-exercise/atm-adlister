@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.User;
+import com.codeup.adlister.util.Password;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -52,17 +53,42 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
-        if (! rs.next()) {
+        if (!rs.next()) {
             return null;
         }
         return new User(
-            rs.getLong("id"),
-            rs.getString("username"),
-            rs.getString("email"),
-            rs.getString("password")
+                rs.getLong("id"),
+                rs.getString("username"),
+                rs.getString("email"),
+                rs.getString("password")
         );
     }
 
+        public void updateEmail(User user, String newEmail) {
+            String query = "UPDATE users SET email = ? WHERE id = ?";
+            try {
+                PreparedStatement stmt = connection.prepareStatement(query);
+                stmt.setString(1, newEmail);
+                stmt.setLong(2, user.getId());
+                stmt.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException("Unable to update email address", e);
+            }
 
+        }
 
-}
+        public void changePassword(User user, String newPassword){
+            newPassword = Password.hash(newPassword);
+            String query = "UPDATE users SET password = ? WHERE id = ?";
+            try {
+                PreparedStatement stmt = connection.prepareStatement(query);
+                stmt.setString(1, newPassword);
+                stmt.setLong(2, user.getId());
+                stmt.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException("Unable to change password", e);
+            }
+
+        }
+    }
+
