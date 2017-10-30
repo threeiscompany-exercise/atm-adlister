@@ -46,7 +46,7 @@ a{
 
 
 .byline {
-    animation: move-byline 6s linear infinite;
+    animation: move-byline 6s linear;
 }
 
 
