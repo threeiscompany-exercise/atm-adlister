@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/ads">Thunderdome</a>
+            <a class="navbar-brand" href="/ads">Star Finder</a>
         </div>
         <form action="/search" method="post" class="navbar-form navbar-left" role="search">
 
