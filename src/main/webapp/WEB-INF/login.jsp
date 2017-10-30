@@ -27,10 +27,13 @@
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-danger btn-block" value="Log In">
-            <%--<button  class="btn waves-effect waves-light" type="submit" name="action">Submit--%>
-                <%--<i class="material-icons right">send</i>--%>
-            <%--</button>--%>
+            <input type="submit" class="btn btn-danger btn-block" value="Log In"><br>
+            <div>
+                <p>
+                <h4>Not Registered? <a href="/register" role="button">Sign Up</a>
+                </h4>
+                </p>
+            </div>
         </form>
     </div>
 

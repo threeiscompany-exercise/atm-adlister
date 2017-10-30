@@ -10,18 +10,28 @@
     <jsp:include page="/WEB-INF/partials/profileNavBar.jsp" />
 
     <div class="container">
-        <h1 id="profileH1">Welcome, ${sessionScope.user.username}!</h1>
-        <p>View your ads here:</p>
-        <c:forEach var="ad" items="${ads}">
-            <div class="row-md-4">
-                <h3>${ad.title}</h3>
-                <p>${ad.description}</p>
-            </div>
-        </c:forEach>
+        <div class="page-header">
+        <h1 id="profileH1">Welcome, ${sessionScope.user.username.toUpperCase()}! <br>
+            <small>${sessionScope.user.email}</small></h1>
+        </div>
 
-    </div>
-    <div>
-        <a class="btn btn-default" href="/ads/create" role="button">Create an Ad</a>
+        <p>View your ads here:</p>
+
+            <div class="row">
+                <div class="col-sm-10">
+                    <c:forEach var="ad" items="${ads}">
+                    <h3><a href="/ads/viewAd?id=${ad.id}">${ad.title}</a></h3>
+                    <p>${ad.description}</p>
+                    </c:forEach>
+                </div>
+                <div class="col-sm-2 offset-sm-2" align="right">
+                    <a class="btn btn-primary btn-block" href="/ads/index.jsp" role="button">View all Ads</a><br>
+                    <a class="btn btn-info btn-block" href="/ads/create" role="button">Create an Ad</a><br>
+                    <a class="btn btn-success btn-block" href="/" role="button">Update Profile</a><br>
+                </div>
+            </div>
+
+
     </div>
 
 </body>
