@@ -7,4 +7,8 @@ import java.util.List;
 public interface Users {
     User findByUsername(String username);
     Long insert(User user);
+
+    void changePassword(User user, String newPassword);
+
+    void updateEmail(User user, String email);
 }
