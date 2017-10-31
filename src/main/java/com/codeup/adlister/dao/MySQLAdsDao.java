@@ -150,6 +150,4 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error deleting this ad");
         }
     }
-
-
 }

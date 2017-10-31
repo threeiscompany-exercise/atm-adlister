@@ -22,30 +22,51 @@ public class LoginServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        User user = DaoFactory.getUsersDao().findByUsername(username);
+
         HashMap<String, String> errors = new HashMap<>();
 
-        if (user == null) {
-            response.sendRedirect("/login");
-             errors.put("username", "A Username is required");
+        if(username.isEmpty()){
+            username = "";
+            errors.put("username", "A username is required");
         }
 
-//        if(username.isEmpty()){
-//            errors.put("username", "A Username is required");
-//        }
+        if(password.isEmpty()){
+            password = "";
+            errors.put("password", "A Password is required");
+        }
 
+        if(!errors.isEmpty()){
+            request.setAttribute("username", username);
+            request.setAttribute("password", password);
+            request.setAttribute("errors", errors);
+            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request,response);
+        }else{
+            User user = DaoFactory.getUsersDao().findByUsername(username);
+            if (user == null) {
+                errors.put("noUser", "Username not found");
+                request.setAttribute("username", username);//Repopulates username
+                request.setAttribute("password", password);
+                request.setAttribute("errors", errors);
+                request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 
-        boolean validAttempt = Password.check(password, user.getPassword());
+            }else{
+                boolean validAttempt = Password.check(password, user.getPassword());
 
-        if (validAttempt) {
-            request.getSession().setAttribute("user", user);
-            response.sendRedirect("/profile");
-        } else {
-            response.sendRedirect("/login");
-            errors.put("password", "A password is required");
+                if (validAttempt) {
+                    request.getSession().setAttribute("user", user);
+                    response.sendRedirect("/profile");
+                } else {
+                    request.setAttribute("username", username);//Repopulates username
+                    request.setAttribute("password", password);
+                    errors.put("passwordMismatch", "Password and username don't match");
+                    request.setAttribute("errors", errors);
+                    request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+
+                }
+            }
         }
     }
 }
