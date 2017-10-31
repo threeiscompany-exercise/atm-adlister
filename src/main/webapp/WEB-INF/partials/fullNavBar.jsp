@@ -14,6 +14,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/register">Register</a></li>
             <li><a href="/login">Login</a></li>
+            <li><a href="/logout">Log Out</a></li>
         </ul>
     </div>
 </nav>

@@ -25,6 +25,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+
         HashMap<String, String> errors = new HashMap<>();
 
         if(username.isEmpty()){
@@ -63,6 +64,7 @@ public class LoginServlet extends HttpServlet {
                 request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
 
             }
+
         }
     }
 }

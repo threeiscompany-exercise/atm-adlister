@@ -54,6 +54,22 @@ public class MySQLAdsDao implements Ads {
 
     }
 
+    @Override
+    public Boolean delete(Long id) {
+        String query = "DELETE FROM ads WHERE id = ?";
+        PreparedStatement stmt;
+        try {
+            stmt = connection.prepareStatement(query);
+            stmt.setLong(1, id);
+            stmt.executeUpdate();
+            return true;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        }
+        return false;
+    }
 
 
     @Override
@@ -123,6 +139,7 @@ public class MySQLAdsDao implements Ads {
 
     }
 
+<<<<<<< HEAD
 //    public List<Ad> allCats() {
 //        String sql =
 //               “SELECT name ” +
@@ -138,6 +155,19 @@ public class MySQLAdsDao implements Ads {
 //            throw new RuntimeException("Error retrieving all categories.", e);
 //        }
 //    }
+=======
+    @Override
+    public void userDelete(int id) { //allow user to delete ads from his profile page
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("DELETE FROM ads where id = ?");
+            stmt.setLong(1,id);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting this ad");
+        }
+    }
+>>>>>>> master
 
 
 }

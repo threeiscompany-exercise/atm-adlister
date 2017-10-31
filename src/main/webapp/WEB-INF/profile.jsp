@@ -22,12 +22,24 @@
                     <c:forEach var="ad" items="${ads}">
                     <h3><a href="/ads/viewAd?id=${ad.id}">${ad.title}</a></h3>
                     <p>${ad.description}</p>
+                    <form action="/ads/delete" method="post">
+                        <div class="form-group">
+                            <input type="hidden" name="id" class="form-control" value="${ad.id}">
+                            <span class="pull-right">
+                                    <button id="delete" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                    </button>
+                                </span>
+                        </div>
+                    </form>
                     </c:forEach>
                 </div>
                 <div class="col-sm-2 offset-sm-2" align="right">
-                    <a class="btn btn-primary btn-block" href="/ads/index.jsp" role="button">View all Ads</a><br>
+
+                    <a class="btn btn-primary btn-block" href="/WEB-INF/ads/index.jsp" role="button">View all Ads</a><br>
                     <a class="btn btn-info btn-block" href="/ads/create" role="button">Create an Ad</a><br>
-                    <a class="btn btn-success btn-block" href="/" role="button">Update Profile</a><br>
+                    <a class="btn btn-success btn-block" href="/password_change" role="button">Update Profile</a><br>
+
                 </div>
             </div>
 
