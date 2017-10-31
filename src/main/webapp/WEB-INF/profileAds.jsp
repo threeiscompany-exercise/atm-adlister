@@ -6,7 +6,8 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
-    <jsp:include page="/style/css/pfrofileAdsStyle.css"></jsp:include>
+    <link rel="stylesheet" href="/style/css/pfrofileAdsStyle.css">
+    <%--<jsp:include page="/style/css/pfrofileAdsStyle.css"></jsp:include>--%>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/profileNavBar.jsp"/>
