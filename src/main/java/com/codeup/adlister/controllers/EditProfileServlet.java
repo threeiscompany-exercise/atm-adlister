@@ -18,11 +18,11 @@ public class EditProfileServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
 
         if (emailIsEmpty || email.equals(user.getEmail())) {
-            response.sendRedirect("/profile/edit");
+            response.sendRedirect("/updateProfile");
         } else {
             DaoFactory.getUsersDao().updateEmail(user, email);
             request.getSession().setAttribute("user", DaoFactory.getUsersDao().findByUsername(user.getUsername()));
-            response.sendRedirect("/profile");
+            response.sendRedirect("/updateProfile");
         }
 
     }
@@ -35,6 +35,6 @@ public class EditProfileServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
         User currentUser = DaoFactory.getUsersDao().findByUsername(user.getUsername());
         request.setAttribute("user", currentUser);
-        request.getRequestDispatcher("/WEB-INF/profile/edit.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/updateProfile").forward(request, response);
     }
 }
