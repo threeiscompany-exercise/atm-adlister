@@ -139,23 +139,6 @@ public class MySQLAdsDao implements Ads {
 
     }
 
-<<<<<<< HEAD
-//    public List<Ad> allCats() {
-//        String sql =
-//               “SELECT name ” +
-//                “FROM categories AS cat ” +
-//                “JOIN ads ” +
-//                “ON ads.cat_id = cat.id ” +
-//                “WHERE cat.id=?“;
-//        try {
-//            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM cats");
-//            ResultSet rs = stmt.executeQuery();
-//            return getCatNameById(rs);
-//        } catch (SQLException e) {
-//            throw new RuntimeException("Error retrieving all categories.", e);
-//        }
-//    }
-=======
     @Override
     public void userDelete(int id) { //allow user to delete ads from his profile page
         PreparedStatement stmt = null;
@@ -167,7 +150,4 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error deleting this ad");
         }
     }
->>>>>>> master
-
-
 }
