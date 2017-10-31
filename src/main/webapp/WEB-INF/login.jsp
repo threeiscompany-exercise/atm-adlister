@@ -22,16 +22,30 @@
             <div class="form-group">
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
+                <c:if test="${errors.username != null}">
+                    <p>
+                    <div class="alert alert-danger" role="alert">
+                            ${errors.username}
+                    </div>
+                    </p>
+                </c:if>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
+                <c:if test="${errors.password != null}">
+                    <p>
+                    <div class="alert alert-danger" role="alert">
+                            ${errors.password}
+                    </div>
+                    </p>
+                </c:if>
             </div>
             <input type="submit" class="btn btn-block" value="Log In"><br>
             <div>
                 <p>
-                <h4 id="registar">Not Registered? <a href="/register" role="button">Sign Up</a>
-                </h4>
+                    <h4 id="registar">Not Registered? <a href="/register" role="button">Sign Up</a>
+                    </h4>
                 </p>
             </div>
         </form>
