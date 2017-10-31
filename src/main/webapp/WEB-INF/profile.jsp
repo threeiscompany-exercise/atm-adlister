@@ -22,22 +22,22 @@
                     <c:forEach var="ad" items="${ads}">
                     <h3><a href="/ads/viewAd?id=${ad.id}">${ad.title}</a></h3>
                     <p>${ad.description}</p>
-                    <form action="/ads/delete" method="post">
+                    <form action="/ads/edit" method="post">
                         <div class="form-group">
                             <input type="hidden" name="id" class="form-control" value="${ad.id}">
                             <span class="pull-right">
-                                    <button id="delete" class="btn btn-default">
-                                        <span>Remove Ad</span>
+                                    <button id="edit" class="btn btn-default">
+                                        <span>Edit Ad</span>
                                     </button>
                                 </span>
                         </div>
                     </form>
-                        <form action="/ads/edit" method="post">
+                        <form action="/ads/delete" method="post">
                             <div class="form-group">
                                 <input type="hidden" name="id" class="form-control" value="${ad.id}">
                                 <span class="pull-right">
-                                    <button id="edit" class="btn btn-default">
-                                        <span>Edit Ad</span>
+                                    <button id="delete" class="btn btn-default">
+                                        <span>Remove Ad</span>
                                     </button>
                                 </span>
                             </div>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-sm-2 offset-sm-2" align="right">
 
-                    <a class="btn btn-primary btn-block" href="/ads/index.jsp" role="button">View all Ads</a><br>
+                    <a class="btn btn-primary btn-block" href="/ads" role="button">View all Ads</a><br>
                     <a class="btn btn-info btn-block" href="/ads/create" role="button">Create an Ad</a><br>
                     <a class="btn btn-success btn-block" href="/password_change" role="button">Update Password</a><br>
 
