@@ -13,7 +13,7 @@
 <%--<div class="stars"></div>--%>
 <%--<div class="twinkling"></div>--%>
 <%--<div class="clouds"></div>--%>
-<div class="container clouds">
+<div class="container ">
     <h1><c:out value="${ad.title}"></c:out><br><small><h4>created by: ${user.username}</h4></small></h1>
 
         <div class="col-md-6">
@@ -21,6 +21,7 @@
             <p><c:out value="${ad.description}" /></p>
         </div>
 </div>
+
 
 </body>
 </html>

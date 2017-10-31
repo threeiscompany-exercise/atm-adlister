@@ -13,10 +13,11 @@ H1{
     /*color: gold;*/
 /*}*/
 H3{
-    color: gold;
+    color: whitesmoke;
+    font-size: 31px;
 }
 h4{
-    color:gold;
+    color:whitesmoke;
 }
 p{
     color: gold;
@@ -38,6 +39,10 @@ a{
 }
 #profile3{
     background-color: lightskyblue;
+}
+#delete{
+    margin-top: -41px;
+
 }
 /*.btn-block{*/
     /*background-color: red;*/
