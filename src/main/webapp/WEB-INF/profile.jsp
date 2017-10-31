@@ -32,6 +32,16 @@
                                 </span>
                         </div>
                     </form>
+                        <form action="/ads/edit" method="post">
+                            <div class="form-group">
+                                <input type="hidden" name="id" class="form-control" value="${ad.id}">
+                                <span class="pull-right">
+                                    <button id="edit" class="btn btn-default">
+                                        <span>Edit Ad</span>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
                     </c:forEach>
                 </div>
                 <div class="col-sm-2 offset-sm-2" align="right">
