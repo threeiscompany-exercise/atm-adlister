@@ -30,11 +30,20 @@ a{
     background-color: gold;
     color: black;
 }
-.btn-block{
-    background-color: red;
-    color: black;
-    font-weight: bolder;
+#profile1{
+    background-color: lightskyblue;
 }
+#profile2{
+    background-color: lightskyblue;
+}
+#profile3{
+    background-color: lightskyblue;
+}
+/*.btn-block{*/
+    /*background-color: red;*/
+    /*color: black;*/
+    /*font-weight: bolder;*/
+/*}*/
 .container-fluid{
     background-color: black;
     color: gold;
