@@ -35,13 +35,12 @@
                     </c:forEach>
                 </div>
                 <div class="col-sm-2 offset-sm-2" align="right">
+
                     <a class="btn btn-primary btn-block" href="/WEB-INF/ads/index.jsp" role="button">View all Ads</a><br>
                     <a class="btn btn-info btn-block" href="/ads/create" role="button">Create an Ad</a><br>
                     <a class="btn btn-success btn-block" href="/password_change" role="button">Update Profile</a><br>
-                    <%--<a class="btn btn-primary btn-block" href="/ads/delete" role="button">Delete Ad</a><br>--%>
-                    <%--<a href="ads/update?id=<c:out value="${ad.id}"/>" class="btn btn-primary" id="update"> update</a>--%>
-                </div>
 
+                </div>
             </div>
 
 
