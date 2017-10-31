@@ -10,10 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
 
 @WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
 public class RegisterServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if(request.getSession().getAttribute("user") != null ){
+            response.sendRedirect("/profile");
+            return;
+        }
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
@@ -22,29 +27,38 @@ public class RegisterServlet extends HttpServlet {
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
+        HashMap<String, String> errors = new HashMap<>();
 
-        // validate input
-        boolean inputHasErrors = username.isEmpty()
-                || email.isEmpty()
-                || password.isEmpty()
-                || (!password.equals(passwordConfirmation));
-
-        if (inputHasErrors) {
-            response.sendRedirect("/register");
-            return;
+        if(username.isEmpty()){
+            errors.put("username", "A Username is required");
+        }
+        if(email.isEmpty()){
+            errors.put("email", "An email is required");
+        }
+        if(password.isEmpty()){
+            errors.put("password", "A password is required");
+        }
+        if(!password.equals(passwordConfirmation)){
+            errors.put("passwordConfirmation", "Passwords must match");
         }
 
         User userIsFound = DaoFactory.getUsersDao().findByUsername(username);
         if (userIsFound != null) {
-            request.setAttribute("error", "this username is already taken");
-            request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+            errors.put("userTaken", "Username is already taken");
+        }
+        if (!errors.isEmpty()) {
+            request.setAttribute("errors", errors);
+            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
             return;
+        }else{
+            // create and save a new user - where password inserts hash password
+            User user = new User(username, email, Password.hash(password));
+            DaoFactory.getUsersDao().insert(user);
+            request.getSession().setAttribute("user", user);
+            response.sendRedirect("/profile");
+
         }
 
-        // create and save a new user - where password inserts hash password
-        User user = new User(username, email, Password.hash(password));
-        DaoFactory.getUsersDao().insert(user);
-        response.sendRedirect("/login");
     }
 
 
