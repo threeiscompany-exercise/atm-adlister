@@ -5,7 +5,6 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Please Log In"/>
     </jsp:include>
-
 </head>
 
 <body class="loginBody">
@@ -14,6 +13,20 @@
 <div class="container">
     <form action="/login" method="POST">
         <div class="form-group">
+            <c:if test="${errors.noUser != null}">
+                <p>
+                <div class="alert alert-danger" role="alert">
+                        ${errors.noUser}
+                </div>
+                </p>
+            </c:if>
+            <c:if test="${errors.passwordMismatch != null}">
+                <p>
+                <div class="alert alert-danger" role="alert">
+                        ${errors.passwordMismatch}
+                </div>
+                </p>
+            </c:if>
             <label for="username">Username</label>
             <input id="username" name="username" class="form-control" type="text" value="${username}">
             <c:if test="${errors.username != null}">
