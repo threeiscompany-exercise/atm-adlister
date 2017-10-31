@@ -21,6 +21,9 @@
             <p><c:out value="${ad.description}" /></p>
         </div>
 </div>
+<div class="picture">
+    <img id="stormTrooper" src="/style/img/stormTrooper.jpg">
+</div>
 
 </body>
 </html>
