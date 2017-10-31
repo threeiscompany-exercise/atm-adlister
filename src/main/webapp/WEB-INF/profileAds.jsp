@@ -6,6 +6,7 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
+    <jsp:include page="/style/css/pfrofileAdsStyle.css"></jsp:include>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/profileNavBar.jsp"/>
@@ -24,6 +25,9 @@
 <div>
     <button type="submit" class="btn btn-default">Create Ads</button>
 </div>
+<%--<div class="stars"></div>--%>
+<%--<div class="twinkling"></div>--%>
+<%--<div class="clouds"></div>--%>
 
 </body>
 </html>

@@ -5,10 +5,14 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Viewing Ad Detail" />
     </jsp:include>
+    <link rel="stylesheet" href="/style/css/pfrofileAdsStyle.css">
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="clouds"></div>
 <div class="container">
     <h1><c:out value="${ad.title}"></c:out><br><small><h4>created by: ${user.username}</h4></small></h1>
 
