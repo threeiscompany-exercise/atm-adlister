@@ -41,8 +41,17 @@ a{
     background-color: lightskyblue;
 }
 #delete{
-    margin-top: -41px;
+    margin-top: -67px;
+    margin-left: -275px;
+    padding: 2px 9px;
+    font-size: 10px;
 
+}
+#edit{
+    margin-top: -67px;
+    margin-left: -200px;
+    padding: 2px 9px;
+    font-size: 10px;
 }
 /*.btn-block{*/
     /*background-color: red;*/

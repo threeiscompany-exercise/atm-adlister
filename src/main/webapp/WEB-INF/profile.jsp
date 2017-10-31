@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-sm-2 offset-sm-2" align="right">
 
-                    <a class="btn btn-primary btn-block" href="/ads/index.jsp" role="button">View all Ads</a><br>
+                    <a class="btn btn-primary btn-block" href="/ads" role="button">View all Ads</a><br>
                     <a class="btn btn-info btn-block" href="/ads/create" role="button">Create an Ad</a><br>
                     <a class="btn btn-success btn-block" href="/password_change" role="button">Update Password</a><br>
 
