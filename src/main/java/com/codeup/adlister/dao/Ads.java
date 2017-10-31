@@ -12,6 +12,12 @@ public interface Ads {
 
     List<Ad> search(String searchAd);
 
+    void userDelete(int id);
+
     Ad findById(Long id);
     Ad viewSingleAd(Long id);
+
+//    void delete(Long id);
+
+    Boolean delete(Long id);
 }
