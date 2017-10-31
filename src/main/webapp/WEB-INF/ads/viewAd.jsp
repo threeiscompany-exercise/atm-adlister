@@ -10,7 +10,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div class="container clouds">
+<div class="container ">
 
     <h1><c:out value="${ad.title}"></c:out><br><small><h4>created by: ${user.username}</h4></small></h1>
 
