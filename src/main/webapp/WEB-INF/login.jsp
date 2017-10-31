@@ -27,10 +27,10 @@
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
-            <input type="submit" class="btn btn-danger btn-block" value="Log In"><br>
+            <input type="submit" class="btn btn-block" value="Log In"><br>
             <div>
                 <p>
-                <h4>Not Registered? <a href="/register" role="button">Sign Up</a>
+                <h4 id="registar">Not Registered? <a href="/register" role="button">Sign Up</a>
                 </h4>
                 </p>
             </div>

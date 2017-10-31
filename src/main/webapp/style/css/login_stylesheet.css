@@ -1,23 +1,39 @@
+body{
 
+}
+#registar{
+    color: white;
+}
 H1{
     text-align: center;
     color: gold;
 }
-H2{
-    text-align: center;
-    color: gold;
-}
+/*H2{*/
+    /*text-align: center;*/
+    /*color: gold;*/
+/*}*/
 H3{
     color: gold;
+}
+h4{
+    color:gold;
 }
 p{
     color: gold;
     font-size: 15px;
 
 }
+a{
+    color: white;
+}
 .btn-default{
     background-color: gold;
     color: black;
+}
+.btn-block{
+    background-color: red;
+    color: black;
+    font-weight: bolder;
 }
 .container-fluid{
     background-color: black;
@@ -25,9 +41,6 @@ p{
     border: solid black;
 }
 .navbar-brand{
-    color: gold;
-}
-a{
     color: gold;
 }
 .btn{
