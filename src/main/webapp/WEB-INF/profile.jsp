@@ -22,6 +22,16 @@
                     <c:forEach var="ad" items="${ads}">
                     <h3><a href="/ads/viewAd?id=${ad.id}">${ad.title}</a></h3>
                     <p>${ad.description}</p>
+                    <form action="/ads/delete" method="post">
+                        <div class="form-group">
+                            <input type="hidden" name="id" class="form-control" value="${ad.id}">
+                            <span class="pull-right">
+                                    <button id="delete" class="btn btn-default">
+                                        <span class="glyphicon glyphicon-minus"></span>
+                                    </button>
+                                </span>
+                        </div>
+                    </form>
                     </c:forEach>
                 </div>
                 <div class="col-sm-2 offset-sm-2" align="right">
