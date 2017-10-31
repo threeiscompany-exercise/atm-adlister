@@ -17,6 +17,14 @@
                 <label for="description">Description</label>
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
+            <div class="form-group">
+                <label for="cats">Categories</label>
+                <c:forEach var="cats" items="${cats}">
+                    <select>
+                        <option value="">${title}</option>
+                    </select>
+                </c:forEach>
+            </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>
