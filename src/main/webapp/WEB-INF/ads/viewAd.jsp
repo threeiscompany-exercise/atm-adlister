@@ -11,6 +11,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container clouds">
+
     <h1><c:out value="${ad.title}"></c:out><br><small><h4>created by: ${user.username}</h4></small></h1>
 
         <div class="col-md-6">
@@ -18,6 +19,7 @@
             <p><c:out value="${ad.description}" /></p>
         </div>
 </div>
+
 
 </body>
 </html>
