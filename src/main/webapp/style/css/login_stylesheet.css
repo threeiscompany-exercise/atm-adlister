@@ -27,6 +27,10 @@ p{
 a{
     color: white;
 }
+
+.center{
+    text-align: center;
+}
 .btn-default{
     background-color: gold;
     color: black;

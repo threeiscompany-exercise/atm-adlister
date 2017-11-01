@@ -64,32 +64,32 @@ public class MySQLUsersDao implements Users {
         );
     }
 
-//        public void updateEmail(User user, String newEmail) {
-//            String query = "UPDATE users SET email = ? WHERE id = ?";
-//            try {
-//                PreparedStatement stmt = connection.prepareStatement(query);
-//                stmt.setString(1, newEmail);
-//                stmt.setLong(2, user.getId());
-//                stmt.executeUpdate();
-//            } catch (SQLException e) {
-//                throw new RuntimeException("Unable to update email address", e);
-//            }
-//
-//
-//        }
+        public void updateEmail(User user, String newEmail) {
+            String query = "UPDATE users SET email = ? WHERE id = ?";
+            try {
+                PreparedStatement stmt = connection.prepareStatement(query);
+                stmt.setString(1, user.getEmail());
+                stmt.setLong(2, user.getId());
+                stmt.executeUpdate();
+            } catch (SQLException e) {
+                throw new RuntimeException("Unable to update email address", e);
+            }
 
-    @Override
-    public void updateEmail (String email, Long id){
-        String query = "UPDATE users SET email=? WHERE id=?";
-        try {
-            PreparedStatement stmt = connection.prepareStatement(query);
-            stmt.setString(1, email);
-            stmt.setLong(2, id);
-            stmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
+
         }
-    }
+//
+//    @Override
+//    public void updateEmail (String email, Long id){
+//        String query = "UPDATE users SET email=? WHERE id=?";
+//        try {
+//            PreparedStatement stmt = connection.prepareStatement(query);
+//            stmt.setString(1, email);
+//            stmt.setLong(2, id);
+//            stmt.executeUpdate();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     public void changePassword(User user, String newPassword){
             newPassword = Password.hash(newPassword);
@@ -104,5 +104,10 @@ public class MySQLUsersDao implements Users {
             }
 
         }
-    }
+
+//    @Override
+//    public void updateEmail(User email, String id) {
+//
+//    }
+}
 
