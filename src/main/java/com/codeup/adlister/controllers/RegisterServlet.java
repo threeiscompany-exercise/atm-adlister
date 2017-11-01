@@ -30,6 +30,7 @@ public class RegisterServlet extends HttpServlet {
         HashMap<String, String> errors = new HashMap<>();
 
         if(username.isEmpty()){
+            request.setAttribute("email", email);
             errors.put("username", "A Username is required");
         }
         if(email.isEmpty()){
@@ -39,6 +40,8 @@ public class RegisterServlet extends HttpServlet {
             errors.put("password", "A password is required");
         }
         if(!password.equals(passwordConfirmation)){
+            request.setAttribute("username", username);
+            request.setAttribute("email", email);
             errors.put("passwordConfirmation", "Passwords must match");
         }
 
@@ -47,6 +50,8 @@ public class RegisterServlet extends HttpServlet {
             errors.put("userTaken", "Username is already taken");
         }
         if (!errors.isEmpty()) {
+            request.setAttribute("username", username);
+            request.setAttribute("email", email);
             request.setAttribute("errors", errors);
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
             return;
