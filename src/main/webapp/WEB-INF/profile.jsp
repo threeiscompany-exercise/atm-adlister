@@ -50,6 +50,8 @@
                     <a class="btn btn-primary btn-block" href="/ads" role="button">View all Ads</a><br>
                     <a class="btn btn-info btn-block" href="/ads/create" role="button">Create an Ad</a><br>
                     <a class="btn btn-success btn-block" href="/password_change" role="button">Update Password</a><br>
+                    <a class="btn btn-info btn-block" href="/profile/edit" role="button">Update Email</a><br>
+                    <%--<a class="btn btn-primary" href="/WEB-INF/updateProfile.jsp?id=<c:out value="${ad.id}"/>" id="update"> update</a>--%>
 
                 </div>
             </div>

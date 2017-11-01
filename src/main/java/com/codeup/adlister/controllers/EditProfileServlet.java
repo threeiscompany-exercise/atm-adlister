@@ -35,6 +35,6 @@ public class EditProfileServlet extends HttpServlet {
         User user = (User) request.getSession().getAttribute("user");
         User currentUser = DaoFactory.getUsersDao().findByUsername(user.getUsername());
         request.setAttribute("user", currentUser);
-        request.getRequestDispatcher("/WEB-INF/updateProfile").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/updateProfile.jsp").forward(request, response);
     }
 }

@@ -23,6 +23,6 @@ public class DeleteServlet extends HttpServlet {
         request.setAttribute("ads", ad);
 
         DaoFactory.getAdsDao().delete(id);
-        response.sendRedirect("/ads");
+        response.sendRedirect("/profile");
     }
 }
