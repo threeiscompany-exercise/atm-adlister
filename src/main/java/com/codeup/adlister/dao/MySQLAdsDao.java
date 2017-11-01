@@ -150,4 +150,18 @@ public class MySQLAdsDao implements Ads {
             throw new RuntimeException("Error deleting this ad");
         }
     }
+
+    public void update(Ad ad) {
+        try {
+            String query = "UPDATE ads SET title=?, description=? WHERE id=?";
+            PreparedStatement statement = connection.prepareStatement(query
+            );
+            statement.setString(1, ad.getTitle());
+            statement.setString(2, ad.getDescription());
+            statement.setLong(3, ad.getId());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException("Error creating a new ad.", e);
+        }
+    }
 }
