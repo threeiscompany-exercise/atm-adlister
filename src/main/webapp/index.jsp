@@ -6,7 +6,7 @@
         <jsp:param name="title" value="Welcome to my site!" />
     </jsp:include>
     <%--<jsp:include page="style/css/login_stylesheet.css"/>--%>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+    <jsp:include page="/WEB-INF/partials/loggedInNavBar.jsp" />
     <script src="style/js/sample.js"></script>
 
 </head>
