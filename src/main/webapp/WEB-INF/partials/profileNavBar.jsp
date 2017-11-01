@@ -14,7 +14,7 @@
         <ul class="nav navbar-nav navbar-right">
             <li><a href="/logout">Logout</a></li>
         </ul>
-        <p class="navbar-text navbar-right">Signed in as <a href="#" class="navbar-link">${user.username}</a></p>
+        <p class="navbar-text navbar-right">Signed in as <a href="/profile" class="navbar-link">${user.username}</a></p>
     </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
 </nav>
