@@ -4,9 +4,16 @@ body{
 #registar{
     color: white;
 }
+.btn{
+    position: relative;
+}
+/*#adBar {*/
+    /*margin-top: 60px;*/
+/*}*/
 H1{
     text-align: center;
     color: gold;
+    margin-top: 160px;
 }
 /*H2{*/
     /*text-align: center;*/

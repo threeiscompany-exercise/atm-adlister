@@ -10,5 +10,6 @@ public interface Users {
 
     void changePassword(User user, String newPassword);
 
-    void updateEmail(User user, String email);
+//    void updateEmail(User user, String email);
+    void updateEmail (User email, String id);
 }
